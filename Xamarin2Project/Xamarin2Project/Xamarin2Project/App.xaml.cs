@@ -10,7 +10,12 @@ namespace Xamarin2Project
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Xamarin2Project.MainPage());
+            MainPage = new NavigationPage(new Xamarin2Project.MainPage())
+            {
+                BarBackgroundColor = Color.DarkOrange,
+                BarTextColor = Color.White,
+                
+            };
             //MainPage = new MainPage();
         }
 
