@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Xamarin2Project.MainPage"
-             Title="Xamarin Exam App" 
+             Title="Mainpage"
              BackgroundColor="#ACACAC"
              Padding="20">
 
@@ -18,10 +18,15 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
+                <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <Button BackgroundColor="AliceBlue" Grid.Column="0" x:Name="button1" Text="Submit1" />
-            <Button BackgroundColor="AntiqueWhite" Grid.Column="1" x:Name="button2" Text="Submit2" />
-            <Button BackgroundColor="DarkGreen" Grid.Column="2" x:Name="button3" Text="Submit3" />
+            <Button BackgroundColor="DarkOrange" TextColor="White" Grid.Column="0" x:Name="SMS" Text="SMS" />
+            <Button BackgroundColor="DarkOrange" TextColor="White" Grid.Column="1" x:Name="Location" Text="Location" />
+            <Button BackgroundColor="DarkOrange" TextColor="White" Grid.Column="2" x:Name="Weather" Text="Weather" />
+
+            <Label TextColor="White" HorizontalOptions="Center" Grid.Column="0" Grid.Row="1" x:Name="smsDescription" Text="Need to send an sms?" />
+            <Label TextColor="White" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1" x:Name="locationDescription" Text="Get your current location" />
+            <Label TextColor="White" HorizontalOptions="Center" Grid.Column="2" Grid.Row="1" x:Name="weatherDescription" Text="Feed our backend with a city!" />
         </Grid>
     </StackLayout>
 
