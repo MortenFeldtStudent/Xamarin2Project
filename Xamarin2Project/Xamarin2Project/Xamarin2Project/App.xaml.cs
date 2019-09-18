@@ -10,7 +10,8 @@ namespace Xamarin2Project
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Xamarin2Project.MainPage());
+            //MainPage = new MainPage();
         }
 
         protected override void OnStart()

@@ -4,13 +4,25 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Xamarin2Project.MainPage">
+             x:Class="Xamarin2Project.MainPage"
+             Title="Xamarin Exam App" 
+             BackgroundColor="#ACACAC"
+             Padding="20">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms! test" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Button BackgroundColor="AliceBlue" Grid.Column="0" x:Name="button1" Text="Submit1" />
+            <Button BackgroundColor="AntiqueWhite" Grid.Column="1" x:Name="button2" Text="Submit2" />
+            <Button BackgroundColor="DarkGreen" Grid.Column="2" x:Name="button3" Text="Submit3" />
+        </Grid>
     </StackLayout>
 
 </ContentPage>
