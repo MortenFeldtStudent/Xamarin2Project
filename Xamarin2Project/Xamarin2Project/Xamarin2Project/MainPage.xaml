@@ -6,8 +6,9 @@
              mc:Ignorable="d"
              x:Class="Xamarin2Project.MainPage"
              Title="Mainpage"
-             BackgroundColor="#ACACAC"
+             BackgroundColor="#484747"
              Padding="20">
+ 
 
     <StackLayout>
         <Grid>
@@ -20,9 +21,9 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <Button BackgroundColor="DarkOrange" TextColor="White" Grid.Column="0" x:Name="SMS" Text="SMS" />
-            <Button BackgroundColor="DarkOrange" TextColor="White" Grid.Column="1" x:Name="Location" Text="Location" />
-            <Button BackgroundColor="DarkOrange" TextColor="White" Grid.Column="2" x:Name="Weather" Text="Weather" />
+            <Button BackgroundColor="CadetBlue" TextColor="White" BorderWidth="0" Grid.Column="0" x:Name="browseSMS" Text="SMS" />
+            <Button BackgroundColor="CadetBlue" TextColor="White" BorderWidth="0" Grid.Column="1" x:Name="browseLocation" Text="Location" />
+            <Button BackgroundColor="CadetBlue" TextColor="White" BorderWidth="0" Grid.Column="2" x:Name="browseWeather" Text="Weather" />
 
             <Label TextColor="White" HorizontalOptions="Center" Grid.Column="0" Grid.Row="1" x:Name="smsDescription" Text="Need to send an sms?" />
             <Label TextColor="White" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1" x:Name="locationDescription" Text="Get your current location" />

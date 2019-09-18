@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin2Project.LocationPage"
+             Title="Location"
+             Padding="20"
+             BackgroundColor="#484747">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                   
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+
+                <Button BackgroundColor="CadetBlue" TextColor="White" Grid.Row="1" x:Name="locationButtonSubmit" Text="Show location" HorizontalOptions="Center" BorderWidth="0"/>
+
+                <Label x:Name="latitude" Text=""/>
+                <Label x:Name="longitude" Text=""/>
+                <Label x:Name="altitude" Text=""/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

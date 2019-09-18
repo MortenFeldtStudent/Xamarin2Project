@@ -16,6 +16,12 @@ namespace Xamarin2Project
         public MainPage()
         {
             InitializeComponent();
+            browseLocation.Clicked += showLocationPage;
+        }
+
+        private void showLocationPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new LocationPage());
         }
     }
 }
