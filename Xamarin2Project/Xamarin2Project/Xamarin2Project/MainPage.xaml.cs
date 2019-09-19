@@ -17,6 +17,18 @@ namespace Xamarin2Project
         {
             InitializeComponent();
             browseLocation.Clicked += showLocationPage;
+            browseSMS.Clicked += BrowseSMS_Clicked;
+            browseWeather.Clicked += BrowseWeather_Clicked;
+        }
+
+        private void BrowseWeather_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new WeatherPage());
+        }
+
+        private void BrowseSMS_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SMSPage());
         }
 
         private void showLocationPage(object sender, EventArgs e)
