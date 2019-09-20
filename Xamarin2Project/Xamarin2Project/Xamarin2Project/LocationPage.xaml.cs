@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
+using Xamarin2Project.Objects;
 
 namespace Xamarin2Project
 {
@@ -29,10 +30,14 @@ namespace Xamarin2Project
                 if (location != null)
                 {
                     Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
-                    
-                    latitude.Text = $"Latitude: { location.Latitude}";
-                    longitude.Text = $"Longitude: { location.Longitude}";
-                    altitude.Text = $"Altitude: { location.Altitude}";
+
+                    LocationInformation locationObj = new LocationInformation
+                    { latitude = location.Latitude, longitude = location.Longitude, altitude = (double)location.Altitude };
+
+
+                    //latitude.Text = $"Latitude: { location.Latitude}";
+                    //longitude.Text = $"Longitude: { location.Longitude}";
+                    //altitude.Text = $"Altitude: { location.Altitude}";
                 }
 
             }

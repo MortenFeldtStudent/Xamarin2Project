@@ -15,7 +15,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
-                   
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15" />
                     <RowDefinition Height="40" />
@@ -24,9 +24,16 @@
 
                 <Button BackgroundColor="CadetBlue" TextColor="White" Grid.Row="1" x:Name="locationButtonSubmit" Text="Show location" HorizontalOptions="Center" BorderWidth="0"/>
 
-                <Label x:Name="latitude" Text=""/>
-                <Label x:Name="longitude" Text=""/>
-                <Label x:Name="altitude" Text=""/>
+                <ListView x:Name="entries">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell
+                    Detail="{Binding LocationInformation.toString()}"
+                        TextColor="White"
+                        DetailColor="White"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
