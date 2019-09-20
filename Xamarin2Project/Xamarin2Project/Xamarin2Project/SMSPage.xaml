@@ -11,7 +11,7 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms (SMS1)!"
+            <Label Text="Welcome to Xamarin.Forms (SMS12)!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
