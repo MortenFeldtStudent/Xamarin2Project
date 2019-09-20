@@ -11,9 +11,9 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms (SMS12)!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="entryRecipient" Placeholder="Receiver" PlaceholderColor="White" TextColor="White" />
+            <Editor x:Name="entryMessage" Placeholder="Text" PlaceholderColor="White" VerticalOptions="FillAndExpand" TextColor="White" />
+            <Button x:Name="buttonSend" BackgroundColor="CadetBlue" TextColor="White" BorderWidth="0" Text="Send SMS" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -14,6 +14,7 @@ namespace Xamarin2Project
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LocationPage : ContentPage
     {
+        private LocationInformation locationObj;
         public LocationPage()
         {
             InitializeComponent();
@@ -29,15 +30,23 @@ namespace Xamarin2Project
 
                 if (location != null)
                 {
-                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                    //Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
 
-                    LocationInformation locationObj = new LocationInformation
+                    locationObj = new LocationInformation
                     { latitude = location.Latitude, longitude = location.Longitude, altitude = (double)location.Altitude };
 
-
+                    locationInfo.Text = locationObj.ToString();
+                    //latitudeTextDetail.Text = locationObj.latitude.ToString();
+                    //longitudeTextDetail.Text = locationObj.longitude.ToString();
+                    //altitudeTextDetail.Text = locationObj.altitude.ToString();
+                    //BindingContext = locationObj;
                     //latitude.Text = $"Latitude: { location.Latitude}";
                     //longitude.Text = $"Longitude: { location.Longitude}";
                     //altitude.Text = $"Altitude: { location.Altitude}";
+                }
+                else
+                {
+                    await DisplayAlert("Info", "Location was not found. Try again!", "OK", "CANCEL");
                 }
 
             }

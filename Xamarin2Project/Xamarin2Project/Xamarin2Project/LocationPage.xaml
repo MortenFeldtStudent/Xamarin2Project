@@ -19,21 +19,13 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15" />
                     <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
 
                 <Button BackgroundColor="CadetBlue" TextColor="White" Grid.Row="1" x:Name="locationButtonSubmit" Text="Show location" HorizontalOptions="Center" BorderWidth="0"/>
-
-                <ListView x:Name="entries">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextCell
-                    Detail="{Binding LocationInformation.toString()}"
-                        TextColor="White"
-                        DetailColor="White"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                
+                <Label TextColor="White" Grid.Row="3" x:Name="locationInfo" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>
