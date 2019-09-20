@@ -25,16 +25,19 @@ namespace Xamarin2Project
 
         private void BrowseWeather_Clicked(object sender, EventArgs e)
         {
+            Vibration.Vibrate();
             Navigation.PushAsync(new WeatherPage());
         }
 
         private void BrowseSMS_Clicked(object sender, EventArgs e)
         {
+            Vibration.Vibrate();
             Navigation.PushAsync(new SMSPage());
         }
 
         private void showLocationPage(object sender, EventArgs e)
         {
+            Vibration.Vibrate();
             Navigation.PushAsync(new LocationPage());
         }
         protected override async void OnAppearing()

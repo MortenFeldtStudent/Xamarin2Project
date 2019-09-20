@@ -18,11 +18,15 @@ namespace Xamarin2Project
         public LocationPage()
         {
             InitializeComponent();
+            navigatetoNikolaiHomeButtonSubmit.IsVisible = false;
             locationButtonSubmit.Clicked += fetchLocationAsync;
+            navigatetoNikolaiHomeButtonSubmit.Clicked += NavigatetoNikolaiHomeButtonSubmit_Clicked;
         }
-
         private async void fetchLocationAsync(object sender, EventArgs e)
         {
+            Vibration.Vibrate();
+            navigatetoNikolaiHomeButtonSubmit.IsVisible = true;
+
             try
             {
                 var request = new GeolocationRequest(GeolocationAccuracy.Medium);
@@ -35,7 +39,12 @@ namespace Xamarin2Project
                     locationObj = new LocationInformation
                     { latitude = location.Latitude, longitude = location.Longitude, altitude = (double)location.Altitude };
 
+                    //navigatetoNikolaiHomeButtonSubmit.IsVisible = true;
+
                     locationInfo.Text = locationObj.ToString();
+
+                    
+                    //await NavigateToBuilding25(locationObj.latitude, locationObj.longitude);
                     //latitudeTextDetail.Text = locationObj.latitude.ToString();
                     //longitudeTextDetail.Text = locationObj.longitude.ToString();
                     //altitudeTextDetail.Text = locationObj.altitude.ToString();
@@ -66,6 +75,18 @@ namespace Xamarin2Project
             {
                 // Unable to get location
             }
+        }
+
+        private async void NavigatetoNikolaiHomeButtonSubmit_Clicked(object sender, EventArgs e)
+        {
+            await RouteToNikolai(55.7303971573384, 12.2945576793848);
+        }
+
+        public async Task RouteToNikolai(double latitude, double longitude)
+        {
+            //var locationMap = new Location(47.645160, -122.1306032);
+            var locationMap = new Location(latitude, longitude);
+            await Map.OpenAsync(locationMap);
         }
     }
 }

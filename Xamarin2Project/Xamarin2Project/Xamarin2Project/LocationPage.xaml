@@ -21,11 +21,15 @@
                     <RowDefinition Height="40" />
                     <RowDefinition Height="15" />
                     <RowDefinition Height="100" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
 
                 <Button BackgroundColor="CadetBlue" TextColor="White" Grid.Row="1" x:Name="locationButtonSubmit" Text="Show location" HorizontalOptions="Center" BorderWidth="0"/>
                 
                 <Label TextColor="White" Grid.Row="3" x:Name="locationInfo" />
+
+                <Button BackgroundColor="CadetBlue" TextColor="White" Grid.Row="5" x:Name="navigatetoNikolaiHomeButtonSubmit" Text="Navigate To Nikolai Home" HorizontalOptions="Center" BorderWidth="0"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
