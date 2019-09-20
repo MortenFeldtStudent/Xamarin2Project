@@ -1,6 +1,10 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin2Project.Objects;
+using Xamarin.Essentials;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Xamarin2Project
 {
@@ -9,6 +13,8 @@ namespace Xamarin2Project
         public App()
         {
             InitializeComponent();
+
+            Entries = new DeviceInformationStartup();
 
             MainPage = new NavigationPage(new Xamarin2Project.MainPage())
             {
@@ -19,9 +25,23 @@ namespace Xamarin2Project
             //MainPage = new MainPage();
         }
 
-        protected override void OnStart()
+        public static DeviceInformationStartup Entries { get; set; }
+
+        //protected override async void OnStart()
+        //{
+        //    // Handle when your app sleeps
+        //}
+        protected override async void OnStart()
         {
-            // Handle when your app starts
+            DeviceInformation item1 = new DeviceInformation { DevInfoTitle = "Model:", DevInfoDetail = DeviceInfo.Model };
+            DeviceInformation item2 = new DeviceInformation { DevInfoTitle = "Manufacturer:", DevInfoDetail = DeviceInfo.Manufacturer };
+            DeviceInformation item3 = new DeviceInformation { DevInfoTitle = "Name:", DevInfoDetail = DeviceInfo.Name };
+            DeviceInformation item4 = new DeviceInformation { DevInfoTitle = "OS Version:", DevInfoDetail = DeviceInfo.VersionString };
+            await App.Entries.AddAsync(item1);
+            await App.Entries.AddAsync(item2);
+            await App.Entries.AddAsync(item3);
+            await App.Entries.AddAsync(item4);
+            //return await App.Entries.GetAllAsync();
         }
 
         protected override void OnSleep()
