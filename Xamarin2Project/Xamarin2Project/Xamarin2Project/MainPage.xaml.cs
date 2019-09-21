@@ -23,10 +23,10 @@ namespace Xamarin2Project
             browseWeather.Clicked += BrowseWeather_Clicked;
         }
 
-        private void BrowseWeather_Clicked(object sender, EventArgs e)
+        private async void BrowseWeather_Clicked(object sender, EventArgs e)
         {
             Vibration.Vibrate();
-            Navigation.PushAsync(new WeatherPage());
+            await Navigation.PushAsync(new WeatherPage());
         }
 
         private void BrowseSMS_Clicked(object sender, EventArgs e)

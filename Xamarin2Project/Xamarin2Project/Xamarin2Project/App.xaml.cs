@@ -20,7 +20,7 @@ namespace Xamarin2Project
             {
                 BarBackgroundColor = Color.CadetBlue,
                 BarTextColor = Color.White,
-                
+                BackgroundColor = Color.FromHex("#484747")
             };
             //MainPage = new MainPage();
         }
