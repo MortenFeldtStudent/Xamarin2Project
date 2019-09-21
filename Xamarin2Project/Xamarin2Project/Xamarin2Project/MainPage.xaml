@@ -8,7 +8,10 @@
              Title="Mainpage"
              BackgroundColor="#484747"
              Padding="20">
- 
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Light ON/OFF" Clicked="OnLightOnOff" />
+    </ContentPage.ToolbarItems>
 
     <StackLayout>
         <Grid>

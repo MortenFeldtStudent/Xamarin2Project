@@ -15,6 +15,7 @@ namespace Xamarin2Project
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private bool light;
         public MainPage()
         {
             InitializeComponent();
@@ -39,6 +40,20 @@ namespace Xamarin2Project
         {
             Vibration.Vibrate();
             Navigation.PushAsync(new LocationPage());
+        }
+        private async void OnLightOnOff(object sender, EventArgs e)
+        {
+            if (light)
+            {
+                await Flashlight.TurnOffAsync();
+                light = false;
+            }
+            else
+            {
+                await Flashlight.TurnOnAsync();
+                light = true;
+            }
+            
         }
         protected override async void OnAppearing()
         {
