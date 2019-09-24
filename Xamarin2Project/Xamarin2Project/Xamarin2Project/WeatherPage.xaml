@@ -8,12 +8,26 @@
              Title="Weather"
              Padding="20"
              BackgroundColor="#484747">
-    
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms (Weather)!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Search" Clicked="OnSearchClicked" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Entry x:Name="entryCity" Text="Copenhagen" Placeholder="Search for city" TextColor="White" />
+        <Label  x:Name="citySearched" HorizontalOptions="CenterAndExpand" Font="Medium" FontAttributes="Bold" Text=" " TextColor="White"></Label>
+        <ListView x:Name="weatherView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout x:Name="test" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label HorizontalOptions="CenterAndExpand" Text="{Binding dayOfWeek}" TextColor="White" Grid.Row="0" Grid.Column="0" LineBreakMode="NoWrap"></Label>
+                            <Label HorizontalOptions="CenterAndExpand" Text="{Binding maxTempRaw}" TextColor="White" Grid.Row="0" Grid.Column="2" LineBreakMode="NoWrap"></Label>
+                            <Image HorizontalOptions="CenterAndExpand" Source="{Binding image_url}" Grid.Row="0" Grid.Column="1"></Image>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
