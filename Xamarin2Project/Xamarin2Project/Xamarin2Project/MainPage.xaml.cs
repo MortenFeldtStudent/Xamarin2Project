@@ -26,7 +26,7 @@ namespace Xamarin2Project
 
         private async void BrowseWeather_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate();
+            //Vibration.Vibrate();
             await Navigation.PushAsync(new WeatherPage());
         }
 
@@ -38,7 +38,7 @@ namespace Xamarin2Project
 
         private void showLocationPage(object sender, EventArgs e)
         {
-            Vibration.Vibrate();
+            //Vibration.Vibrate();
             Navigation.PushAsync(new LocationPage());
         }
         private async void OnLightOnOff(object sender, EventArgs e)
