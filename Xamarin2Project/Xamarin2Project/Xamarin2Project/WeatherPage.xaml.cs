@@ -15,7 +15,7 @@ namespace Xamarin2Project
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WeatherPage : ContentPage
     {
-        //public string citySearched = "yo";
+        public bool IsSeparatorVisible = true;
         private List<WeatherDTO> weatherDTOList = new List<WeatherDTO>();
         //private string search = "copenhagen";
         private HttpClient client = new HttpClient();

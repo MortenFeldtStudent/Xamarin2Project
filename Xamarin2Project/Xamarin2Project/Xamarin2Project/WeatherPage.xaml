@@ -14,8 +14,7 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <!--<StackLayout>-->
-            <Entry x:Name="entryCity" Text="Copenhagen" Placeholder="Search for city" TextColor="White" PlaceholderColor="White" />
+        <Entry x:Name="entryCity" Text="Copenhagen" Placeholder="Search for city" TextColor="White" PlaceholderColor="White" />
             <Label  x:Name="citySearched" HorizontalOptions="CenterAndExpand" Font="Medium" FontAttributes="Bold" Text=" " TextColor="White"></Label>
             <ListView x:Name="weatherView">
                 <ListView.ItemTemplate>
@@ -30,20 +29,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        <!--</StackLayout>-->
-        <!--<StackLayout>
-            <ListView x:Name="weatherItemTappedView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout x:Name="test" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Label FontSize="10" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="{Binding wind_speed}" TextColor="White" LineBreakMode="NoWrap"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>-->
     </StackLayout>
     
 </ContentPage>
