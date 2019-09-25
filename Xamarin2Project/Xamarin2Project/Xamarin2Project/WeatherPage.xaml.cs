@@ -15,12 +15,9 @@ namespace Xamarin2Project
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WeatherPage : ContentPage
     {
-        public bool IsSeparatorVisible = true;
         private List<WeatherDTO> weatherDTOList = new List<WeatherDTO>();
-        //private string search = "copenhagen";
         private HttpClient client = new HttpClient();
         private string Url = "https://www.mortenfeldtstudent.dk/WeatherApiProject/api/weather/5days/";
-        //private string weatherXaml = "";
         public WeatherPage()
         {
             InitializeComponent();
@@ -38,29 +35,28 @@ namespace Xamarin2Project
             citySearched.Text = entryCity.Text;
             GetDataFromAPIAsync(entryCity.Text);
             entryCity.Text = "";
-            entryCity.Focus();
         }
         private async void GetDataFromAPIAsync(string city)
         {
-            var response = await client.GetStringAsync(Url + city);
-
-            var weatherList = JsonConvert.DeserializeObject<List<WeatherDTO>>(response);
-
-            for (var i = 0; i < weatherList.Count; i++)
+            try
             {
-                weatherList[i].setImageUrl();
-                weatherList[i].setmaxTempRaw();
-                weatherList[i].setDayOfWeek();
+                var response = await client.GetStringAsync(Url + city);
+
+                var weatherList = JsonConvert.DeserializeObject<List<WeatherDTO>>(response);
+
+                for (var i = 0; i < weatherList.Count; i++)
+                {
+                    weatherList[i].setImageUrl();
+                    weatherList[i].setmaxTempRaw();
+                    weatherList[i].setDayOfWeek();
+                }
+
+                weatherView.ItemsSource = weatherList;
             }
-
-            weatherView.ItemsSource = weatherList;
-        }
-
-        private string CapitalLetter(string str)
-        {
-            string uppercase = str.ToUpper();
-            string lowercase = str.ToLower();
-            return uppercase.Substring(0, 1) + lowercase.Substring(1);
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", "Could not find weather for the requested city!\n\n" + ex.Message, "OK");
+            }
         }
     }
 }
