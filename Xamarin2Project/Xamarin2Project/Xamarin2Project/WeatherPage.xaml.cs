@@ -24,6 +24,13 @@ namespace Xamarin2Project
         public WeatherPage()
         {
             InitializeComponent();
+            weatherView.ItemTapped += WeatherView_ItemTapped;
+        }
+
+        private async void WeatherView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            WeatherDTO weatherDTO = e.Item as WeatherDTO;
+            await DisplayAlert("TEST", weatherDTO.dayOfWeek, "OK");
         }
 
         private void OnSearchClicked(object sender, EventArgs e)
@@ -42,37 +49,12 @@ namespace Xamarin2Project
             for (var i = 0; i < weatherList.Count; i++)
             {
                 weatherList[i].setImageUrl();
-                weatherList[i].setTempToInt();
+                weatherList[i].setmaxTempRaw();
                 weatherList[i].setDayOfWeek();
             }
 
             weatherView.ItemsSource = weatherList;
         }
-
-        //string myDataTemplate = new DataTemplate(() =>
-        //{
-        //    var cell = new ViewCell();
-        //    var grid = new Grid();
-
-        //    foreach (var record in myRecords)
-        //    {
-        //        grid.RowDefinitions.Add(new RowDefinition());
-        //    }
-
-        //    foreach (var field in myFields)
-        //    {
-        //        grid.ColumnDefinitions.Add(new ColumnDefinition());
-        //    }
-
-        //    /*
-        //     * 
-        //     * Populate grid here...
-        //     * 
-        //     */
-
-        //    cell.View = grid;
-        //    return cell;
-        //});
 
         private string CapitalLetter(string str)
         {
