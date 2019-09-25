@@ -58,14 +58,6 @@ namespace Xamarin2Project
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            //DeviceInformation item1 = new DeviceInformation { DevInfoTitle = "Model:", DevInfoDetail = DeviceInfo.Model };
-            //DeviceInformation item2 = new DeviceInformation { DevInfoTitle = "Manufacturer:", DevInfoDetail = DeviceInfo.Manufacturer };
-            //DeviceInformation item3 = new DeviceInformation { DevInfoTitle = "Name:", DevInfoDetail = DeviceInfo.Name };
-            //DeviceInformation item4 = new DeviceInformation { DevInfoTitle = "OS Version:", DevInfoDetail = DeviceInfo.VersionString };
-            //await App.Entries.AddAsync(item1);
-            //await App.Entries.AddAsync(item2);
-            //await App.Entries.AddAsync(item3);
-            //await App.Entries.AddAsync(item4);
             entries.ItemsSource = await App.Entries.GetAllAsync();
         }
     }

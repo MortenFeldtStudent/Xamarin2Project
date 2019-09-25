@@ -34,24 +34,12 @@ namespace Xamarin2Project
 
                 if (location != null)
                 {
-                    //Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
-
                     locationObj = new LocationInformation
                     { latitude = location.Latitude, longitude = location.Longitude, altitude = (double)location.Altitude };
 
-                    //navigatetoNikolaiHomeButtonSubmit.IsVisible = true;
 
                     locationInfo.Text = locationObj.ToString();
 
-                    
-                    //await NavigateToBuilding25(locationObj.latitude, locationObj.longitude);
-                    //latitudeTextDetail.Text = locationObj.latitude.ToString();
-                    //longitudeTextDetail.Text = locationObj.longitude.ToString();
-                    //altitudeTextDetail.Text = locationObj.altitude.ToString();
-                    //BindingContext = locationObj;
-                    //latitude.Text = $"Latitude: { location.Latitude}";
-                    //longitude.Text = $"Longitude: { location.Longitude}";
-                    //altitude.Text = $"Altitude: { location.Altitude}";
                 }
                 else
                 {
@@ -61,11 +49,11 @@ namespace Xamarin2Project
             }
             catch (FeatureNotSupportedException fnsEx)
             {
-                // Handle not supported on device exception
+                await DisplayAlert("Error", "Location is not supported on this device!", "OK", "CANCEL");
             }
             catch (FeatureNotEnabledException fneEx)
             {
-                // Handle not enabled on device exception
+                await DisplayAlert("Error", "Location is not enabled on this device!", "OK", "CANCEL");
             }
             catch (PermissionException pEx)
             {
@@ -73,7 +61,7 @@ namespace Xamarin2Project
             }
             catch (Exception ex)
             {
-                // Unable to get location
+                await DisplayAlert("Error", "An error has occured. Try again later!", "OK", "CANCEL");
             }
         }
 
@@ -84,7 +72,6 @@ namespace Xamarin2Project
 
         public async Task RouteToNikolai(double latitude, double longitude)
         {
-            //var locationMap = new Location(47.645160, -122.1306032);
             var locationMap = new Location(latitude, longitude);
             await Map.OpenAsync(locationMap);
         }
