@@ -27,13 +27,13 @@ namespace Xamarin2Project
         private async void WeatherView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             WeatherDTO weatherDTO = e.Item as WeatherDTO;
-            await DisplayAlert("TEST", weatherDTO.dayOfWeek, "OK");
+            await DisplayAlert(weatherDTO.dayOfWeek, weatherDTO.ToString(), "OK");
         }
 
         private void OnSearchClicked(object sender, EventArgs e)
         {
-            citySearched.Text = entryCity.Text;
             GetDataFromAPIAsync(entryCity.Text);
+            citySearched.Text = entryCity.Text;
             entryCity.Text = "";
         }
         private async void GetDataFromAPIAsync(string city)
@@ -47,7 +47,7 @@ namespace Xamarin2Project
                 for (var i = 0; i < weatherList.Count; i++)
                 {
                     weatherList[i].setImageUrl();
-                    weatherList[i].setmaxTempRaw();
+                    weatherList[i].setTempsRaw();
                     weatherList[i].setDayOfWeek();
                 }
 

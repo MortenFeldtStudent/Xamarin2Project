@@ -16,6 +16,7 @@
     <StackLayout>
         <Entry x:Name="entryCity" Text="Copenhagen" Placeholder="Search for city" TextColor="White" PlaceholderColor="White" />
             <Label  x:Name="citySearched" HorizontalOptions="CenterAndExpand" Font="Large" FontAttributes="Bold" Text=" " TextColor="DarkOrange"></Label>
+            <BoxView HeightRequest="1" Color="DarkOrange"/>
             <ListView x:Name="weatherView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
