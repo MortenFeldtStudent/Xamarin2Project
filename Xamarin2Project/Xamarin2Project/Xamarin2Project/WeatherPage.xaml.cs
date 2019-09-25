@@ -28,6 +28,7 @@ namespace Xamarin2Project
         {
             WeatherDTO weatherDTO = e.Item as WeatherDTO;
             await DisplayAlert(weatherDTO.dayOfWeek, weatherDTO.ToString(), "OK");
+            ((ListView)sender).SelectedItem = null;
         }
 
         private void OnSearchClicked(object sender, EventArgs e)
