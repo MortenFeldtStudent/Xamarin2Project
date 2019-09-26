@@ -9,17 +9,14 @@ namespace Xamarin2Project.Objects
     public class DeviceInformationStartup
     {
         private readonly Dictionary<string, DeviceInformation> entries = new Dictionary<string, DeviceInformation>();
-
-        public Task AddAsync(DeviceInformation entry)
+        public void AddItemToList(DeviceInformation entry)
         {
             entries.Add(entry.DevInfoTitle, entry);
-            return Task.CompletedTask;
         }
 
-        public Task<IEnumerable<DeviceInformation>> GetAllAsync()
+        public List<DeviceInformation> GetAllItemsFromList()
         {
-            IEnumerable<DeviceInformation> result = entries.Values.ToList();
-            return Task.FromResult(result);
+            return entries.Values.ToList();
         }
     }
 }

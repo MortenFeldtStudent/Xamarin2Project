@@ -3,25 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:Xamarin2Project"
              mc:Ignorable="d"
              x:Class="Xamarin2Project.WeatherPage"
              Title="Weather"
              Padding="20"
              BackgroundColor="#484747">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Search" Clicked="OnSearchClicked" />
-    </ContentPage.ToolbarItems>
-
     <StackLayout>
-        <!--<SearchBar x:Name="SearchBar" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
-            <SearchBar.Behaviors>
-                <local:TextChangedBehavior />
-            </SearchBar.Behaviors>
-        </SearchBar>-->
-        <Entry x:Name="entryCity" Text="Copenhagen" FontSize="15" Placeholder="Search for city" TextColor="White" PlaceholderColor="Black" />
-            <Label  x:Name="citySearched" HorizontalOptions="CenterAndExpand" Font="Large" FontAttributes="Bold" Text=" " TextColor="DarkOrange"></Label>
+        <SearchBar SearchButtonPressed="SearchButtonPressed" x:Name="searchButton" Placeholder="Search for city..." CancelButtonColor="DarkOrange" PlaceholderColor="DarkOrange" TextColor="DarkOrange" HorizontalTextAlignment="Start" FontSize="Medium" />
+        <Label  x:Name="citySearched" HorizontalOptions="CenterAndExpand" Font="Large" FontAttributes="Bold" Text=" " TextColor="DarkOrange"></Label>
             <BoxView HeightRequest="1" Color="DarkOrange"/>
             <ListView x:Name="weatherView">
                 <ListView.ItemTemplate>

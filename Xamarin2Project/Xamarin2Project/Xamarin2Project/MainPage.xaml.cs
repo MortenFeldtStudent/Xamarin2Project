@@ -55,10 +55,10 @@ namespace Xamarin2Project
             }
             
         }
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
-            entries.ItemsSource = await App.Entries.GetAllAsync();
+            entries.ItemsSource = App.Entries.GetAllItemsFromList();
         }
     }
 }

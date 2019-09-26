@@ -30,12 +30,12 @@ namespace Xamarin2Project
             await DisplayAlert(weatherDTO.dayOfWeek, weatherDTO.ToString(), "OK");
             ((ListView)sender).SelectedItem = null;
         }
-
-        private void OnSearchClicked(object sender, EventArgs e)
+        private void SearchButtonPressed(object sender, EventArgs e)
         {
-            GetDataFromAPIAsync(entryCity.Text);
-            citySearched.Text = entryCity.Text;
-            entryCity.Text = "";
+            SearchBar searchBar = (SearchBar)sender;
+            GetDataFromAPIAsync(searchBar.Text);
+            citySearched.Text = searchBar.Text;
+            searchBar.Text = "";
         }
         private async void GetDataFromAPIAsync(string city)
         {
