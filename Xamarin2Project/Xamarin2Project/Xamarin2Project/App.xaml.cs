@@ -18,7 +18,7 @@ namespace Xamarin2Project
 
             MainPage = new NavigationPage(new Xamarin2Project.MainPage())
             {
-                BarBackgroundColor = Color.CadetBlue,
+                BarBackgroundColor = Color.Black,
                 BarTextColor = Color.White,
                 BackgroundColor = Color.FromHex("#484747")
             };
